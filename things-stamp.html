@@ -3,7 +3,9 @@
 <link rel="import" href="../things-ajax/things-ajax.html">
 <link rel="import" href="../things-button/things-button.html">
 <link rel="import" href="../iron-input/iron-input.html">
+<link rel="import" href="../iron-icon/iron-icon.html">
 <link rel="import" href="../iron-icons/iron-icons.html">
+<link rel="import" href="../things-i18n-msg/things-i18n-msg.html">
 
 <!--
 `<things-stamp>` Things Stamp resource의 생성 및 수정 정보를 출력하는 컴퍼넌트
@@ -17,7 +19,8 @@
       last-response="{{response}}">
     </things-ajax>
 
-    <things-stamp resource="[[response]]">
+    <things-stamp
+      resource="[[response]]">
     </things-stamp>
 
 @demo demo/demo-things-stamp.html
@@ -117,7 +120,6 @@
           type: Object,
           observer: '_resourceChange'
         },
-
       },
 
       /**

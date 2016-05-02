@@ -31,5 +31,5 @@ Once running, you can preview your element at
 `http://localhost:8080/components/things-stamp/`, where `things-stamp` is the name of the directory containing it.
 
 
-## Example 1. Things date picker
-`<things-stamp>` Things Stamp
+## Example 1. Things Stamp
+`<things-stamp>` Things Stamp resource의 생성 및 수정 정보를 출력하는 컴퍼넌트

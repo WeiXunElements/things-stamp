@@ -2,25 +2,26 @@
 <!--
 @license
 Copyright (c) 2016 The Things Project Authors. All rights reserved.
-This code may only be used under the BSD style license found at https://github.com/ThingsElements/things-date-picker/LICENSE.txt
-The complete set of authors may be found at https://github.com/ThingsElements/things-date-picker/AUTHORS.txt
-The complete set of contributors may be found at https://github.com/ThingsElements/things-date-picker/CONTRIBUTORS.txt
+This code may only be used under the BSD style license found at https://github.com/ThingsElements/things-stamp/LICENSE.txt
+The complete set of authors may be found at https://github.com/ThingsElements/things-stamp/AUTHORS.txt
+The complete set of contributors may be found at https://github.com/ThingsElements/things-stamp/CONTRIBUTORS.txt
 Code distributed by Hatiolab as part of the things project is also
-subject to an additional IP rights grant found at https://github.com/ThingsElements/things-date-picker/PATENTS.txt
+subject to an additional IP rights grant found at https://github.com/ThingsElements/things-stamp/PATENTS.txt
 -->
 <html>
 <head>
 
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1, user-scalable=yes">
-  <title>things-time-picker demo</title>
+  <title>things-stamp demo</title>
   <script src="../../webcomponentsjs/webcomponents-lite.min.js"></script>
 
   <link rel="import" href="../../polymer/polymer.html">
   <link rel="import" href="../../iron-demo-helpers/demo-snippet.html">
   <link rel="import" href="../../iron-demo-helpers/demo-pages-shared-styles.html">
 
-  <link rel="import" href="../things-time-picker.html">
+  <link rel="import" href="../../things-ajax/things-ajax">
+  <link rel="import" href="../things-stamp.html">
 
   <style is="custom-style">
 
@@ -61,18 +62,25 @@ subject to an additional IP rights grant found at https://github.com/ThingsEleme
 <body unresolved>
   <demo-snippet class="centered-demo">
     <template>
-      <sample-date-picker></sample-date-picker>
+      <sample-stamp></sample-stamp>
 
-      <dom-module id="sample-date-picker">
+      <dom-module id="sample-stamp">
         <template>
-          <things-time-picker 
-            label="Time Picker">
-          </things-time-picker>
+          <things-ajax
+            auto
+            resource-url="roles/:id"
+            resource-id="7"
+            last-response="{{response}}">
+          </things-ajax>
+
+          <things-stamp
+            resource="[[response]]">
+          </things-stamp>
         </template>
 
         <script>
           Polymer({
-            is: "sample-date-picker"
+            is: "sample-stamp"
           });
         </script>
       </dom-module>
