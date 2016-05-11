@@ -1,9 +1,9 @@
 <link rel="import" href="../polymer/polymer.html">
 
-<link rel="import" href="../iron-input/iron-input.html">
 <link rel="import" href="../iron-icon/iron-icon.html">
 <link rel="import" href="../iron-icons/iron-icons.html">
 <link rel="import" href="../things-i18n-msg/things-i18n-msg.html">
+<link rel="import" href="../things-input-field/things-input-field.html">
 
 <!--
 `<things-stamp>` Things Stamp resource의 생성 및 수정 정보를 출력하는 컴퍼넌트
@@ -27,17 +27,17 @@
   <template>
       <div class="paper-font-caption"><things-i18n-msg msgid="label.create"></things-i18n-msg></div>
       <iron-icon icon="icons:alarm"></iron-icon>
-      <input id="created-at" is="iron-input" value="[[createdAt]]" readonly>
+      <things-input-field id="created-at" value="[[createdAt]]" readonly></things-input-field>
       
       <iron-icon icon="icons:account-circle"></iron-icon>
-      <input id="created-by" is="iron-input" value="[[creator]]" readonly>
+      <things-input-field id="created-by" value="[[creator]]" readonly></things-input-field>
       
       <div class="paper-font-caption"><things-i18n-msg msgid="label.update"></things-i18n-msg></div>
       <iron-icon icon="icons:alarm"></iron-icon>
-      <input id="updated-at" is="iron-input" value="[[updatedAt]]" readonly>
+      <things-input-field id="updated-at" value="[[updatedAt]]" readonly></things-input-field>
       
       <iron-icon icon="icons:account-circle"></iron-icon>
-      <input id="updated-by" is="iron-input" value="[[updater]]" readonly>
+      <things-input-field id="updated-by" value="[[updater]]" readonly></things-input-field>
   </template>
 
   <script>
