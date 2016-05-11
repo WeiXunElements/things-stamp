@@ -25,19 +25,23 @@
 -->
 <dom-module id="things-stamp">
   <template>
+    <div class="layout horizontal flex">
       <div class="paper-font-caption"><things-i18n-msg msgid="label.create"></things-i18n-msg></div>
       <iron-icon icon="icons:alarm"></iron-icon>
       <things-input-field id="created-at" value="[[createdAt]]" readonly></things-input-field>
-      
+
       <iron-icon icon="icons:account-circle"></iron-icon>
       <things-input-field id="created-by" value="[[creator]]" readonly></things-input-field>
-      
+    </div>
+
+    <div class="layout horizontal flex">  
       <div class="paper-font-caption"><things-i18n-msg msgid="label.update"></things-i18n-msg></div>
       <iron-icon icon="icons:alarm"></iron-icon>
       <things-input-field id="updated-at" value="[[updatedAt]]" readonly></things-input-field>
       
       <iron-icon icon="icons:account-circle"></iron-icon>
       <things-input-field id="updated-by" value="[[updater]]" readonly></things-input-field>
+    </div>
   </template>
 
   <script>
