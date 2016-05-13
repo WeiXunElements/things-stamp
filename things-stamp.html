@@ -25,6 +25,9 @@
 -->
 <dom-module id="things-stamp">
   <template>
+    <style>
+      things-input-field::shadow label{display:none !important;}
+    </style>
     <div class="layout horizontal flex">
       <div class="paper-font-caption"><things-i18n-msg msgid="label.create"></things-i18n-msg></div>
       <iron-icon icon="icons:alarm"></iron-icon>
