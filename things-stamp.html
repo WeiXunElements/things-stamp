@@ -26,8 +26,31 @@
 <dom-module id="things-stamp">
   <template>
     <style>
-      things-input-field::shadow label{display:none !important;}
+      things-input-field {
+        min-width:24%;
+      }
+      div things-input-field:last-child {
+        min-width:15%
+      }
+      things-input-field::shadow label {
+        display:none !important;
+      }
+      things-input-field::shadow input {
+        width:80%;
+        padding-left:24px;
+      }
+      .paper-font-caption {
+        @apply(--things-label);
+        width:13%;
+      }
+      iron-icon {
+        @apply(--things-small-icon);
+        position:absolute;
+        margin:5px 0 0 5px;
+        opacity:.4
+      }
     </style>
+
     <div class="layout horizontal flex">
       <div class="paper-font-caption"><things-i18n-msg msgid="label.create"></things-i18n-msg></div>
       <iron-icon icon="icons:alarm"></iron-icon>
