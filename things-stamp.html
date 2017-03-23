@@ -7,15 +7,24 @@
 
 <!--
 `<things-stamp>` Things Stamp resource의 생성 및 수정 정보를 출력하는 컴퍼넌트
-  
-  Example
-  
-    <things-ajax
-      auto
-      resource-url="roles/:id"
-      resource-id="7"
-      last-response="{{response}}">
-    </things-ajax>
+
+Example
+```js
+  {
+  "creator" : {
+    "id" : 4,
+    "name" : "남종호",
+    "email" : "shortstop@hatiolab.com"
+  },
+  "updater" : {
+    "id" : 4,
+    "name" : "남종호",
+    "email" : "shortstop@hatiolab.com"
+  },
+  "created_at" : "2016-12-07 02:28:17",
+  "updated_at" : "2016-12-07 02:28:17"
+}
+```
 
     <things-stamp
       resource="[[response]]">
@@ -60,11 +69,11 @@
       <things-input-field id="created-by" value="[[creator]]" readonly></things-input-field>
     </div>
 
-    <div class="layout horizontal flex">  
+    <div class="layout horizontal flex">
       <div class="paper-font-caption"><things-i18n-msg msgid="label.update"></things-i18n-msg></div>
       <iron-icon icon="icons:alarm"></iron-icon>
       <things-input-field id="updated-at" value="[[updatedAt]]" readonly></things-input-field>
-      
+
       <iron-icon icon="icons:account-circle"></iron-icon>
       <things-input-field id="updated-by" value="[[updater]]" readonly></things-input-field>
     </div>
@@ -127,7 +136,7 @@
          */
         creator: {
           type: String
-        },        
+        },
 
         /**
          * resource에서 추출하는 최종 updater data
