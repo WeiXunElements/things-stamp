@@ -6,18 +6,18 @@
 <link rel="import" href="../things-input-field/things-input-field.html">
 
 <!--
+## things-stamp
 `<things-stamp>` Things Stamp resource의 생성 및 수정 정보를 출력하는 컴퍼넌트
 
-Example
+### Example
+#### resource:
 ```js
   {
   "creator" : {
-    "id" : 4,
     "name" : "남종호",
     "email" : "shortstop@hatiolab.com"
   },
   "updater" : {
-    "id" : 4,
     "name" : "남종호",
     "email" : "shortstop@hatiolab.com"
   },
@@ -25,7 +25,7 @@ Example
   "updated_at" : "2016-12-07 02:28:17"
 }
 ```
-
+#### code:
     <things-stamp
       resource="[[response]]">
     </things-stamp>
@@ -85,68 +85,77 @@ Example
 
       properties: {
 
-        /**
+        /*******
          * 전달 받은 resource에서 createdAt을 추출하기 위한 field 값
+         * @type {String}
          */
         createdAtField: {
           type: String,
           value: 'created_at'
         },
 
-        /**
+        /********
          * 전달 받은 resource에서 updatedAt을 추출하기 위한 field 값
+         * @type {String}
          */
         updatedAtField: {
           type: String,
           value: 'updated_at'
         },
 
-        /**
+        /********
          * 전달 받은 resource에서 creator를 추출하기 위한 field 값
+         * @type {String}
          */
         creatorField: {
           type: String,
           value: 'creator'
         },
 
-        /**
+        /********
          * 전달 받은 resource에서 updater를 추출하기 위한 field 값
+         *@type {String}
          */
         updaterField: {
           type: String,
           value: 'updater'
         },
 
-        /**
+        /********
          * resource에서 추출하는 최종 createdAt data
+         * @type {String}
          */
         createdAt: {
           type: String
         },
 
-        /**
+        /*******
          * resource에서 추출하는 최종 createdAt data
+         * @type {String}
          */
         updatedAt: {
           type: String
         },
 
-        /**
+        /*******
          * resource에서 추출하는 최종 creator data
+         * @type {String}
          */
         creator: {
           type: String
         },
 
-        /**
+        /*******
          * resource에서 추출하는 최종 updater data
+         * @type {String}
          */
         updater: {
           type: String
         },
 
-        /**
+        /*******
          * things-ajax를 통해 전달받은 data
+         * @type {Object}
          */
         resource: {
           type: Object,
@@ -154,9 +163,10 @@ Example
         },
       },
 
-      /**
+      /*********
        * resource가 변화 했을때 호출되는 function
        * 각 변수에 변화된 값을 초기화 합니다.
+       * @param {resource} resource #### :리소스변경시 입력
        */
       _resourceChange: function(resource) {
         this.createdAt = resource[this.createdAtField];

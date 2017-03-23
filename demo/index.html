@@ -19,7 +19,7 @@ subject to an additional IP rights grant found at https://github.com/ThingsEleme
   <link rel="import" href="../../polymer/polymer.html">
   <link rel="import" href="../../iron-demo-helpers/demo-snippet.html">
   <link rel="import" href="../../iron-demo-helpers/demo-pages-shared-styles.html">
-
+  <link rel="import" href="../../paper-button/paper-button.html">
   <link rel="import" href="../../things-ajax/things-ajax">
   <link rel="import" href="../things-stamp.html">
 
@@ -60,12 +60,14 @@ subject to an additional IP rights grant found at https://github.com/ThingsEleme
 </head>
 
 <body unresolved>
+
   <demo-snippet class="centered-demo">
     <template>
       <sample-stamp></sample-stamp>
 
       <dom-module id="sample-stamp">
         <template>
+          <paper-button on-tap="getresource" raised noink>GET RESOURCE</paper-button><br><br>
           <things-ajax
             auto
             resource-url="roles/:id"
@@ -80,8 +82,24 @@ subject to an additional IP rights grant found at https://github.com/ThingsEleme
 
         <script>
           Polymer({
-            is: "sample-stamp"
-          });
+            is: "sample-stamp",
+           getresource : function(){
+           this.response={
+           "creator" : {
+             "name" : "남종호",
+             "email" : "shortstop@hatiolab.com"
+           },
+           "updater" : {
+             "name" : "남종호",
+             "email" : "shortstop@hatiolab.com"
+           },
+           "created_at" : "2016-12-07 02:28:17",
+           "updated_at" : "2016-12-07 02:28:17"
+         }
+         }
+
+
+        });
         </script>
       </dom-module>
     </template>
