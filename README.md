@@ -6,7 +6,7 @@
 ## Example:
 resource
 
-```html
+```js
     {
     "creator" : {
       "name" : "남종호",
@@ -21,7 +21,7 @@ resource
     }
 ```
 code:
-```
+```html
     <things-stamp
       resource="[[response]]">
     </things-stamp>
