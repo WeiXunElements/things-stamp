@@ -1,6 +1,6 @@
 # things-stamp
 
-## Things Stamp resource의 생성 및 수정 정보를 출력하는 컴퍼넌트
+## This is a component that prints the information about creation and modification of Things Stamp resource.
 
 
 ## Example:
@@ -33,8 +33,7 @@ code:
 
 ## Dependencies
 
-Element dependencies are managed via [Bower](http://bower.io/). You can
-install that via:
+Element dependencies are managed via [Bower](http://bower.io/). You can install that via:
 
     npm install -g bower
 
@@ -55,4 +54,4 @@ And you can run it via:
     polymer serve
 
 Once running, you can preview your element at
-`http://localhost:8080/components/things-alarm/`, where `things-alarm` is the name of the directory containing it.
+`http://localhost:8080/components/things-stamp/`, where `things-stamp` is the name of the directory containing it.
