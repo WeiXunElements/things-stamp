@@ -39,6 +39,11 @@ Copyright © HatioLab Inc. All rights reserved.
 <dom-module id="things-stamp">
   <template>
     <style>
+      host:{
+        --things-input {
+          @apply --things-stamp-input;
+        }
+      }
       things-input-field {
         min-width:24%;
       }
