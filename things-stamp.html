@@ -39,15 +39,15 @@ Copyright © HatioLab Inc. All rights reserved.
 <dom-module id="things-stamp">
   <template>
     <style>
-      host:{
-        --things-input {
+      :host {
+        --things-input: {
           @apply --things-stamp-input;
-        }
-      }
+        };
+      };
       things-input-field {
         min-width:24%;
       }
-      div things-input-field:last-child {
+      things-input-field:last-child {
         min-width:15%
       }
       things-input-field::shadow label {
@@ -58,11 +58,11 @@ Copyright © HatioLab Inc. All rights reserved.
         padding-left:24px;
       }
       .paper-font-caption {
-        @apply(--things-label);
+        @apply --things-label;
         width:13%;
       }
       iron-icon {
-        @apply(--things-small-icon);
+        @apply --things-small-icon;
         position:relative;
         margin:5px -22px 0 5px;
         opacity:.4
@@ -72,19 +72,19 @@ Copyright © HatioLab Inc. All rights reserved.
     <div class="layout horizontal flex">
       <div class="paper-font-caption"><things-i18n-msg msgid="label.create"></things-i18n-msg></div>
       <iron-icon icon="icons:alarm"></iron-icon>
-      <things-input-field id="created-at" value="[[createdAt]]" readonly></things-input-field>
+      <things-input-field id="created-at" hide-label value="[[createdAt]]" readonly></things-input-field>
 
       <iron-icon icon="icons:account-circle"></iron-icon>
-      <things-input-field id="created-by" value="[[creator]]" readonly></things-input-field>
+      <things-input-field id="created-by" hide-label value="[[creator]]" readonly></things-input-field>
     </div>
 
     <div class="layout horizontal flex">
       <div class="paper-font-caption"><things-i18n-msg msgid="label.update"></things-i18n-msg></div>
       <iron-icon icon="icons:alarm"></iron-icon>
-      <things-input-field id="updated-at" value="[[updatedAt]]" readonly></things-input-field>
+      <things-input-field id="updated-at" hide-label value="[[updatedAt]]" readonly></things-input-field>
 
       <iron-icon icon="icons:account-circle"></iron-icon>
-      <things-input-field id="updated-by" value="[[updater]]" readonly></things-input-field>
+      <things-input-field id="updated-by" hide-label value="[[updater]]" readonly></things-input-field>
     </div>
   </template>
 
