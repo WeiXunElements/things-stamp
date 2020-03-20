@@ -183,10 +183,10 @@ Copyright © HatioLab Inc. All rights reserved.
        * @param {resource} resource #### :리소스변경시 입력
        */
       _resourceChange: function(resource) {
-        this.createdAt = resource[this.createdAtField];
-        this.updatedAt = resource[this.updatedAtField];
-        this.creator = resource[this.creatorField] ? resource[this.creatorField].name : '';
-        this.updater = resource[this.updaterField] ? resource[this.updaterField].name : '';
+        this.createdAt = resource && resource[this.createdAtField];
+        this.updatedAt = resource && resource[this.updatedAtField];
+        this.creator = resource && (resource[this.creatorField] ? resource[this.creatorField].name : '');
+        this.updater = resource && (resource[this.updaterField] ? resource[this.updaterField].name : '');
       }
     });
   </script>
