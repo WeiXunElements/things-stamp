@@ -1,118 +1,95 @@
 <!--
 @license
-Copyright © HatioLab Inc. All rights reserved.
+Copyright © 2015-2021 Shenzhen Weixun All rights reserved.
 -->
-<!doctype html>
+<!DOCTYPE html>
 <html>
-
-<head>
-
-    <meta charset="utf-8">
-    <meta name="viewport"
-        content="width=device-width, minimum-scale=1.0, initial-scale=1, user-scalable=yes">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1, user-scalable=yes" />
     <title>things-stamp demo</title>
     <script src="../../webcomponentsjs/webcomponents-lite.min.js"></script>
 
-    <link rel="import"
-        href="../../polymer/polymer.html">
-    <link rel="import"
-        href="../../iron-demo-helpers/demo-snippet.html">
-    <link rel="import"
-        href="../../iron-demo-helpers/demo-pages-shared-styles.html">
-    <link rel="import"
-        href="../../paper-button/paper-button.html">
-    <link rel="import"
-        href="../../things-ajax/things-ajax">
-    <link rel="import"
-        href="../things-stamp.html">
+    <link rel="import" href="../../polymer/polymer.html" />
+    <link rel="import" href="../../iron-demo-helpers/demo-snippet.html" />
+    <link rel="import" href="../../iron-demo-helpers/demo-pages-shared-styles.html" />
+    <link rel="import" href="../../paper-button/paper-button.html" />
+    <link rel="import" href="../../things-ajax/things-ajax" />
+    <link rel="import" href="../things-stamp.html" />
 
     <style is="custom-style">
-        .output {
-            margin-top: 20px;
-            word-wrap: break-word;
-            @apply(--paper-font-common-code);
-        }
+      .output {
+        margin-top: 20px;
+        word-wrap: break-word;
+        @apply (--paper-font-common-code);
+      }
 
-        form>paper-button {
-            width: 45%;
-            margin-top: 20px;
-        }
+      form > paper-button {
+        width: 45%;
+        margin-top: 20px;
+      }
 
-        form>paper-button:not([disabled]) {
-            background: var(--paper-light-blue-500);
-            color: white;
-        }
+      form > paper-button:not([disabled]) {
+        background: var(--paper-light-blue-500);
+        color: white;
+      }
 
-        button {
-            margin-top: 20px;
-        }
+      button {
+        margin-top: 20px;
+      }
 
-        paper-spinner {
-            width: 14px;
-            height: 14px;
-            margin-right: 20px;
-        }
+      paper-spinner {
+        width: 14px;
+        height: 14px;
+        margin-right: 20px;
+      }
 
-        paper-dropdown-menu {
-            display: block;
-        }
+      paper-dropdown-menu {
+        display: block;
+      }
 
-        demo-snippet {
-            --demo-snippet-code: {
-                max-height: 300px;
-            }
-            ;
+      demo-snippet {
+        --demo-snippet-code: {
+          max-height: 300px;
         }
-
+      }
     </style>
+  </head>
 
-</head>
+  <body unresolved>
+    <demo-snippet class="centered-demo">
+      <template>
+        <sample-stamp></sample-stamp>
 
-<body unresolved>
+        <dom-module id="sample-stamp">
+          <template>
+            <paper-button on-tap="getresource" raised noink>GET RESOURCE</paper-button><br /><br />
+            <things-ajax auto resource-url="roles/:id" resource-id="7" last-response="{{response}}"> </things-ajax>
 
-  <demo-snippet class="centered-demo">
-    <template>
-      <sample-stamp></sample-stamp>
+            <things-stamp resource="[[response]]"> </things-stamp>
+          </template>
 
-      <dom-module id="sample-stamp">
-        <template>
-          <paper-button on-tap="getresource" raised noink>GET RESOURCE</paper-button><br><br>
-          <things-ajax
-            auto
-            resource-url="roles/:id"
-            resource-id="7"
-            last-response="{{response}}">
-          </things-ajax>
-
-          <things-stamp
-            resource="[[response]]">
-          </things-stamp>
-        </template>
-
-        <script>
+          <script>
             Polymer({
-                is: "sample-stamp",
-                getresource: function() {
-                    this.response = {
-                        "creator": {
-                            "name": "홍길동",
-                            "email": "shortstop@hatiolab.com"
-                        },
-                        "updater": {
-                            "name": "홍길동",
-                            "email": "shortstop@hatiolab.com"
-                        },
-                        "created_at": "2016-12-07 02:28:17",
-                        "updated_at": "2016-12-07 02:28:17"
-                    }
-                }
+              is: "sample-stamp",
+              getresource: function () {
+                this.response = {
+                  creator: {
+                    name: "홍길동",
+                    email: "shortstop@hatiolab.com",
+                  },
+                  updater: {
+                    name: "홍길동",
+                    email: "shortstop@hatiolab.com",
+                  },
+                  created_at: "2016-12-07 02:28:17",
+                  updated_at: "2016-12-07 02:28:17",
+                };
+              },
             });
-
-        </script>
-      </dom-module>
-    </template>
-  </demo-snippet>
-
-</body>
-
+          </script>
+        </dom-module>
+      </template>
+    </demo-snippet>
+  </body>
 </html>

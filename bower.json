@@ -1,8 +1,8 @@
 {
   "name": "things-stamp",
-  "version": "v2.2.1",
+  "version": "v2.2.2",
   "authors": [
-    "Hatio Lab. <heartyoh@hatiolab.com>"
+    "Shenzhen Weixun"
   ],
   "description": "",
   "keywords": [
@@ -11,8 +11,6 @@
     "seed"
   ],
   "main": "things-stamp.html",
-  "license": "http://license.hatiolab.com/EULA",
-  "homepage": "http://elements.hatiolab.com/",
   "ignore": [
     "/.*",
     "/test/"

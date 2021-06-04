@@ -1,13 +1,13 @@
 <!--
 @license
-Copyright © HatioLab Inc. All rights reserved.
+Copyright © 2015-2021 Shenzhen Weixun All rights reserved.
 -->
-<link rel="import" href="../polymer/polymer.html">
+<link rel="import" href="../polymer/polymer.html" />
 
-<link rel="import" href="../iron-icon/iron-icon.html">
-<link rel="import" href="../iron-icons/iron-icons.html">
-<link rel="import" href="../things-i18n-msg/things-i18n-msg.html">
-<link rel="import" href="../things-input-field/things-input-field.html">
+<link rel="import" href="../iron-icon/iron-icon.html" />
+<link rel="import" href="../iron-icons/iron-icons.html" />
+<link rel="import" href="../things-i18n-msg/things-i18n-msg.html" />
+<link rel="import" href="../things-input-field/things-input-field.html" />
 
 <!--
 ## things-stamp
@@ -40,27 +40,27 @@ Copyright © HatioLab Inc. All rights reserved.
   <template>
     <style>
       things-input-field {
-        min-width:24%;
+        min-width: 24%;
       }
       div things-input-field:last-child {
-        min-width:15%
+        min-width: 15%;
       }
       things-input-field::shadow label {
-        display:none !important;
+        display: none !important;
       }
       things-input-field::shadow input {
-        width:80%;
-        padding-left:24px;
+        width: 80%;
+        padding-left: 24px;
       }
       .paper-font-caption {
-        @apply(--things-label);
-        width:13%;
+        @apply (--things-label);
+        width: 13%;
       }
       iron-icon {
-        @apply(--things-small-icon);
-        position:relative;
-        margin:5px -22px 0 5px;
-        opacity:.4
+        @apply (--things-small-icon);
+        position: relative;
+        margin: 5px -22px 0 5px;
+        opacity: 0.4;
       }
     </style>
 
@@ -88,7 +88,6 @@ Copyright © HatioLab Inc. All rights reserved.
       is: "things-stamp",
 
       properties: {
-
         /**
          * 전달 받은 resource에서 createdAt을 추출하기 위한 field 값
          * *****
@@ -96,7 +95,7 @@ Copyright © HatioLab Inc. All rights reserved.
          */
         createdAtField: {
           type: String,
-          value: 'created_at'
+          value: "created_at",
         },
 
         /**
@@ -106,7 +105,7 @@ Copyright © HatioLab Inc. All rights reserved.
          */
         updatedAtField: {
           type: String,
-          value: 'updated_at'
+          value: "updated_at",
         },
 
         /**
@@ -116,7 +115,7 @@ Copyright © HatioLab Inc. All rights reserved.
          */
         creatorField: {
           type: String,
-          value: 'creator'
+          value: "creator",
         },
 
         /**
@@ -126,7 +125,7 @@ Copyright © HatioLab Inc. All rights reserved.
          */
         updaterField: {
           type: String,
-          value: 'updater'
+          value: "updater",
         },
 
         /**
@@ -135,7 +134,7 @@ Copyright © HatioLab Inc. All rights reserved.
          * @type {String}
          */
         createdAt: {
-          type: String
+          type: String,
         },
 
         /**
@@ -144,7 +143,7 @@ Copyright © HatioLab Inc. All rights reserved.
          * @type {String}
          */
         updatedAt: {
-          type: String
+          type: String,
         },
 
         /**
@@ -153,7 +152,7 @@ Copyright © HatioLab Inc. All rights reserved.
          * @type {String}
          */
         creator: {
-          type: String
+          type: String,
         },
 
         /**
@@ -162,7 +161,7 @@ Copyright © HatioLab Inc. All rights reserved.
          * @type {String}
          */
         updater: {
-          type: String
+          type: String,
         },
 
         /**
@@ -172,7 +171,7 @@ Copyright © HatioLab Inc. All rights reserved.
          */
         resource: {
           type: Object,
-          observer: '_resourceChange'
+          observer: "_resourceChange",
         },
       },
 
@@ -182,12 +181,12 @@ Copyright © HatioLab Inc. All rights reserved.
        * ********
        * @param {resource} resource #### :리소스변경시 입력
        */
-      _resourceChange: function(resource) {
+      _resourceChange: function (resource) {
         this.createdAt = resource && resource[this.createdAtField];
         this.updatedAt = resource && resource[this.updatedAtField];
-        this.creator = resource && (resource[this.creatorField] ? resource[this.creatorField].name : '');
-        this.updater = resource && (resource[this.updaterField] ? resource[this.updaterField].name : '');
-      }
+        this.creator = resource && (resource[this.creatorField] ? resource[this.creatorField].name : "");
+        this.updater = resource && (resource[this.updaterField] ? resource[this.updaterField].name : "");
+      },
     });
   </script>
 </dom-module>
